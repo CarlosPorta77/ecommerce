@@ -1,0 +1,21 @@
+.Card {
+    width: 150px;
+    height: 170px;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.3);
+    padding: 10px;
+    margin: 20px;
+}
+
+.Card .title {
+    font-weight: bold;
+    font-size: 20px;
+    height: 50px;
+}
+
+.Card .container {
+    height: 50px;
+}
+
+.Card .actions {
+    height: 50px;
+}
