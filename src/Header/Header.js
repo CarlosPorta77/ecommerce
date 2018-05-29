@@ -2,7 +2,10 @@ import React from 'react';
 
 import './Header.css';
 
+import ClientCreate from '../ClientCreate/ClientCreate';
 import ClientList from '../ClientList/ClientList';
+import ProductCreate from '../ProductCreate/ProductCreate';
+import ProductsDeleteAll from '../ProductsDeleteAll/ProductsDeleteAll';
 import ProductList from '../ProductList/ProductList'
 
 import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
