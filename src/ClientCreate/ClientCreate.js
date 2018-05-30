@@ -3,52 +3,41 @@ import React, {Component} from 'react';
 import axios from 'axios';
 
 // Assets
-import './SubCardCreate.css';
+import './ClientCreate.css';
 
-class SubCardCreate extends Component {
+class ClientCreate extends Component {
 
   state = {
     error: null,
     errorUpdate: null,
-    prioridadInput: '',
-    descriptionInput: '',
-    id_card: '',
-    cards: []
+    nombreInput: '',
+    id: '',
+    clientes: []
   };
 
   constructor(props){
     super(props);
 
-    axios.get('http://localhost:4000/cards')
+    axios.get('http://10.0.1.153:4000/clientes')
       .then(result => {
         const {data} = result;
         this.setState({
-          cards: data
+          clientes: data
         });
       });
   }
 
-  getPrioridad = (event) => {
-    const prioridadInput = event.target.value;
-    this.setState({prioridadInput});
+  getNombre = (event) => {
+    const nombreInput = event.target.value;
+    this.setState({nombreInput});
   };
 
-  getDescription = (event) => {
-    const descriptionInput = event.target.value;
-    this.setState({descriptionInput});
-  };
 
-  getId = (event) => {
-    const card_ID = event.target.value;
-    this.setState({id_card: card_ID});
-  };
 
-  saveCard = () => {
-    const {prioridadInput, descriptionInput, id_card} = this.state;
-    axios.post('http://localhost:4000/subcards', {
-      prioridad: prioridadInput.parseInt(),
-      description: descriptionInput,
-      id_card: id_card.parseInt()
+  saveClient = () => {
+    const {nombreInput} = this.state;
+    axios.post('http://10.0.1.153:4000/clientes', {
+      nombre: nombreInput
     }).then(response => {
       this.props.history.push("/");
     })
@@ -64,15 +53,8 @@ class SubCardCreate extends Component {
     const errorUpdate = (<label>{this.state.errorUpdate}</label>);
     return (
       <div className="Form">
-        <input placeholder="Prioridad" onChange={this.getPrioridad} value={this.state.prioridadInput} />
-        <input placeholder="Description" onChange={this.getDescription} value={this.state.descriptionInput} />
-        <select onChange={this.getId}>
-          {
-            this.state.cards.map((todo,index) => <option key={index} value={todo.id}>{todo.title}</option>)
-
-          }
-        </select>
-        <button onClick={this.saveCard}>Add Card</button>
+        <input placeholder="Nombre " onChange={this.getNombre} value={this.state.nombreInput} />
+           <button onClick={this.saveClient}>Almacenar Cliente</button>
         {this.state.error ? error : ''}
         {this.state.errorUpdate ? errorUpdate : ''}
       </div>
@@ -80,4 +62,4 @@ class SubCardCreate extends Component {
   }
 }
 
-export default SubCardCreate;
+export default ClientCreate;
