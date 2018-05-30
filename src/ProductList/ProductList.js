@@ -7,7 +7,7 @@ class ClientList extends Component {
 
   state = {
     error: null,
-    cards: []
+    productos: []
   };
 
   constructor(props, context){
@@ -16,7 +16,7 @@ class ClientList extends Component {
       .then(response => {
         const {data} = response;
         this.setState({
-          client: data
+          productos: data
         });
       });
 
@@ -25,11 +25,11 @@ class ClientList extends Component {
   deleteCard = (id) => {
     axios.delete(`http://localhost:4000/client/${id}`)
       .then(() => {
-        const newClient = this.state.client.filter(client => {
-          return client.id !== id;
+        const newProducts = this.state.productos.filter(productos => {
+          return productos.id !== id;
         });
         this.setState({
-          client: newClient
+          productos: newProductos
         });
       })
       .catch(error => {
