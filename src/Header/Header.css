@@ -3,17 +3,29 @@
     width: 100%;
     background-color: #ff7b00;
     border-bottom: 2px solid #da6d07;
-    color:white;
+    position: fixed;
+    display: flex;
+    align-items:center;
+    justify-content: center;
 }
 
 .contenedor-rutas {
     display: flex;
     flex-direction: row;
-    align-items: center;
-    justify-content: center;
     margin: 10px;
 }
 
 .ruta {
     padding-right: 20px;
+}
+a {
+    color: #2c3e50;
+    text-decoration: none;
+    font-family: 'Nunito', sans-serif;
+
+}
+
+a:hover, a:active {
+    color: #ecf0f1;
+    transition: all 0.25s ease-in-out;
 }
