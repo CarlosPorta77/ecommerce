@@ -5,11 +5,79 @@
   .content {
     display: flex;
     flex-direction: row;
-    height: calc(100% - 56px);
+    height: calc(100% - 7vh);
     justify-content: center;
   }
-  
-  .form input {
-    margin-bottom: 15px;
+
+  h2 {
+    font-family: 'Nunito', sans-serif;
+    color: #2c3e50;
   }
-  
+/* Estilos Globales Formulario */
+  .Form {
+    height: 30vh;
+    width: 100vw;
+    margin: 8vh 0 0;
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    justify-content: space-evenly;
+    border: 1px solid black;
+  }
+  .Form input {
+    height: 3vh;
+    width: 35vw;
+    padding: 1vh 1vw;
+    border-radius: 2vh;
+    border: 1px solid rgb(145, 138, 139);
+    font-size: 1em;
+    
+  }
+  .Form input:focus {
+    outline:0;
+    background-color: lightgray;
+    border-radius: 2vh;
+  }
+  .Form button {
+    height: 5vh;
+    width: 37vw;
+    border-radius: 2vh;
+    font-size: 1em;
+    border: 1px solid #2980b9;
+    background-color:#2980b9;
+    color: #fff;
+    cursor: pointer;
+  }
+
+  .Form button:hover {
+    background-color: #3498db;
+  }
+
+  @media only screen and (max-width: 620px)  {
+    .Form input {
+      height: 25px;
+      width: 200px;
+      padding: 5px;
+      border-radius: 15px;      
+    }
+    .Form button {
+      height: 35px;
+      width: 210px;
+      border-radius: 15px;      
+    }
+  }
+
+@media only screen and (min-width: 1080px)  {
+  .Form input {
+     height: 25px;
+      width: 350px;
+      padding: 5px;
+      border-radius: 15px;      
+    }
+    .Form button {
+      height: 35px;
+      width: 360px;
+      border-radius: 15px;      
+    }
+  }
+
