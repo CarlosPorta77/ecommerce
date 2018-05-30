@@ -53,6 +53,7 @@ class ClientCreate extends Component {
     const errorUpdate = (<label>{this.state.errorUpdate}</label>);
     return (
       <div className="Form">
+      <h2>Crear un Cliente Nuevo</h2>
         <input placeholder="Nombre " onChange={this.getNombre} value={this.state.nombreInput} />
            <button onClick={this.saveClient}>Almacenar Cliente</button>
         {this.state.error ? error : ''}

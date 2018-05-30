@@ -1,22 +1,24 @@
 .header {
-    height: 55px;
-    width: 100%;
+    height: 7vh;
+    width: 100vw;
+    top:0;
     background-color: #ff7b00;
     border-bottom: 2px solid #da6d07;
     position: fixed;
     display: flex;
     align-items:center;
-    justify-content: center;
+    justify-content: space-evenly;
 }
 
 .contenedor-rutas {
     display: flex;
     flex-direction: row;
-    margin: 10px;
+    margin: 1vh;
+
 }
 
 .ruta {
-    padding-right: 20px;
+    padding-right: 3vh;
 }
 a {
     color: #2c3e50;

@@ -1,44 +1,28 @@
-.Form {
-    margin: 5% auto 2%;
-    width: 1200px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .Form input {
-    width: 270px;
-    margin-bottom: 15px;
-    padding: 8px;
-    border-radius: 4px;
-    border: 1px solid rgb(145, 138, 139);
-    font-size: 16px;
-    height: 42px;
-  }
-  
-  .Form input:focus {
-    border-radius: 4px;
-    /*border: 2px groove rgba(36, 50, 179, 0.95);*/
-    outline-width: 8px;
-    outline-color: rgb(26, 123, 224);
-  }
-  
-  .Form button {
-    padding: 10px;
-    font-size: 16px;
-    outline: none;
-    background: none;
-    background-color: rgb(26, 118, 240);
-    border: none;
-    width: 270px;
-    height: 42px;
-    border-radius: 6px;
-    color: #fff;
-    cursor: pointer;
-    margin-bottom: 10px;
-  }
-  
-  .Form label {
+.Form .dropdown {
+    height: 4vh;
+    width: 37vw;
+}
+
+.Form .dropdown:focus {
+    outline:0;
+    background-color: lightgray;
+}
+
+.Form label {
     color: #ff1111;
   }
-  
+
+
+@media only screen and (max-width: 620px)  {
+  .Form .dropdown {
+    height: 35px;
+    width: 210px;
+}
+  }
+
+@media only screen and (min-width: 1080px)  {
+  .Form .dropdown {
+    height: 35px;
+    width: 360px;
+  }
+}

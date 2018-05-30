@@ -2,6 +2,7 @@
 import React, {Component} from 'react';
 import axios from 'axios';
 
+import './ProductCreate.css';
 
 
 class ProductCreate extends Component {
@@ -57,9 +58,10 @@ class ProductCreate extends Component {
     const errorUpdate = (<label>{this.state.errorUpdate}</label>);
     return (
       <div className="Form">
+      <h2>Agregar Un Producto Nuevo</h2>
         <input placeholder="Nombre " onChange={this.getNombre} value={this.state.nombreInput} />
 
-        <select onChange={this.getCategoriaId}>
+        <select className="dropdown" onChange={this.getCategoriaId}>
           {
             this.state.categorias.map((categoria,index) => <option key={index} value={categoria.id}>{categoria.nombre}</option>)
 
