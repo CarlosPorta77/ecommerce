@@ -5,7 +5,7 @@ import axios from 'axios';
 // Assets
 import './ClientCreate.css';
 
-class ProdcutCreate extends Component {
+class ProductCreate extends Component {
 
   state = {
     error: null,
@@ -35,7 +35,7 @@ class ProdcutCreate extends Component {
 
   getCategoria = (event) => {
     const categoria_ID = event.target.value;
-    this.setState({categoriaInput: card_ID});
+    this.setState({categoriaInput: categoria_ID});
   };
 
   saveClient = () => {
@@ -76,5 +76,5 @@ class ProdcutCreate extends Component {
   }
 }
 
-export default ClientCreate;
+export default ProductCreate;
 
