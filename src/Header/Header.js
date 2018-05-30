@@ -5,7 +5,7 @@ import './Header.css';
 import ClientCreate from '../ClientCreate/ClientCreate';
 import ClientList from '../ClientList/ClientList';
 import ProductCreate from '../ProductCreate/ProductCreate';
-import ProductsDeleteAll from '../ProductsDeleteAll/ProductsDeleteAll';
+//import ProductsDeleteAll from '../ProductsDeleteAll/ProductsDeleteAll';
 import ProductList from '../ProductList/ProductList'
 
 import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
@@ -28,7 +28,7 @@ const header = (props) => {
                     <Route path="/clientCreate/:clientId?" component={ClientCreate}/>
                     <Route path="/productList" component={ProductList}/>
                     <Route path="/productCreate/:productId?" component={ProductCreate}/>
-                    <Route path="/productsDeleteAll/:productId?" component={ProductsDeleteAll}/>
+                    {/* <Route path="/productsDeleteAll/:productId?" component={ProductsDeleteAll}/> */}
                 </Switch>
             </div>
         </Router>

@@ -62,9 +62,9 @@ class ClientList extends Component {
     .then(response => {
       const {data} = response
       const productoAMostrar = this.state.productos.filter(producto => {
-        return data.cliente_producto.filter(cliente_producto => clienteproducto.productoid === producto.id)
+        return data.cliente_producto.filter(cliente_producto => cliente_producto.productoid === producto.id)
       }) 
-      console.log(productosAMostrar)
+      console.log(productoAMostrar)
 
     } )
   }
@@ -73,14 +73,14 @@ class ClientList extends Component {
     return this.state.client
       .map(client => {
         return (
-          <Client key={client.id}
+          <ClientCard key={client.id}
             id={client.id}
             nombre={client.nombre}
             handleDeleteClick={() => this.deleteClient(client.id)}
             handleUpdateClick={() => this.updateElement(client.id)}
           >
-            {producto.nombre}
-          </Client>
+            {this.state.producto.nombre}
+          </ClientCard>
         );
       });
   };
@@ -92,7 +92,7 @@ class ClientList extends Component {
 
     return (
       <div className="Wrap">
-        {this.state.error ? error : cards}
+        {this.state.error ? error : client}
       </div>
     );
   }

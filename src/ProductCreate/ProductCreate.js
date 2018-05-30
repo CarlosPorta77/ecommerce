@@ -2,8 +2,7 @@
 import React, {Component} from 'react';
 import axios from 'axios';
 
-// Assets
-import './ClientCreate.css';
+
 
 class ProductCreate extends Component {
 
@@ -40,7 +39,7 @@ class ProductCreate extends Component {
 
   saveClient = () => {
     const {nombreInput, categoriaInput} = this.state;
-    axios.post('http://10.0.1.153:4000/categorias', {
+    axios.post('http://10.0.1.153:4000/productos', {
       nombre: nombreInput,
       categoriaID : categoriaInput
     }).then(response => {
