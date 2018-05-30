@@ -20,24 +20,24 @@ class ClientList extends Component {
         this.setState({
           client: data})
         })
-          axios.get('http://localhost:4000/productos')
+          axios.get('10.0.1.153:4000/productos')
           .then(response => {
             const {data} = response;
             this.setState({
               productos: data})
             })
-              axios.get('http://localhost:4000/cliente_producto')
+              axios.get('10.0.1.153:4000/cliente_producto')
               .then(response => {
                 const {data} = response;
                 this.setState({
                   cliente_productos: data
                  })
       })
-
+      console.log(this.mostrarProductos())
   }
 
   deleteCard = (id) => {
-    axios.delete(`http://localhost:4000/client/${id}`)
+    axios.delete(`10.0.1.153:4000/clientes/${id}`)
       .then(() => {
         const newClient = this.state.client.filter(client => {
           return client.id !== id;
@@ -58,13 +58,13 @@ class ClientList extends Component {
   };
 
   mostrarProductos = (clienteId) =>{
-    return axios.get(`http://localhost:4000/cliente_producto/${clienteId}`)
+    return axios.get(`10.0.1.153:4000/cliente_producto/${clienteId}`)
     .then(response => {
       const {data} = response
       const productoAMostrar = this.state.productos.filter(producto => {
         return data.cliente_producto.filter(cliente_producto => cliente_producto.productoid === producto.id)
       }) 
-      console.log(productoAMostrar)
+    
 
     } )
   }
@@ -89,10 +89,12 @@ class ClientList extends Component {
   render() {
     const client = this.getClients();
     const error = (<div className="error">{this.state.error}</div>);
+    const nombreDeProductos = this.productoAMostrar();
 
     return (
       <div className="Wrap">
-        {this.state.error ? error : client}
+        {this.state.error ? error : client} 
+        
       </div>
     );
   }

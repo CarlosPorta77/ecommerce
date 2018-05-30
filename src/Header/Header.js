@@ -26,7 +26,7 @@ const header = (props) => {
                 <Switch>
                     <Route path="/clientList" component={ClientList}/>
                     <Route path="/clientCreate/:clientId?" component={ClientCreate}/>
-                    <Route path="/productList" component={ProductList}/>
+                    {/* <Route path="/productList" component={ProductList}/> */}
                     <Route path="/productCreate/:productId?" component={ProductCreate}/>
                     {/* <Route path="/productsDeleteAll/:productId?" component={ProductsDeleteAll}/> */}
                 </Switch>
