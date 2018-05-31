@@ -8,7 +8,7 @@ import ProductCreate from '../ProductCreate/ProductCreate';
 //import ProductsDeleteAll from '../ProductsDeleteAll/ProductsDeleteAll';
 import ProductList from '../ProductList/ProductList'
 import CategoryCreate from '../CategoryCreate/CategoryCreate';
-
+import Purchase from '../Purchase/Purchase';
 import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
 
 const header = (props) => {

@@ -43,7 +43,7 @@ class Purchase extends Component {
       .then(result => {
         const {data} = result;
         this.setState({
-          clientes: data
+          productos: data
         });
       });
 
@@ -71,7 +71,7 @@ class Purchase extends Component {
   };
 
   saveClienteProducto = () => {
-    const {nombreInput, categoriaInput} = this.state;
+    const {clienteInput, cantidadInput, productoInput} = this.state;
     axios.post('http://10.0.1.153:4000/cliente_producto', {
       clienteId: clienteInput,
       productoId : productoInput,
@@ -92,31 +92,33 @@ class Purchase extends Component {
     return (
       <div className="Form">
       <h2> Nueva Compra</h2>
-        <br><br> 
-       
-       <select className="dropdown" onChange={this.getCliente}>
+        <br/> 
+         <p> cliente </p>
+       <select className="dropdown"  onChange={this.getCliente}>
           {
             this.state.clientes.map((cliente,index) => <option key={index} value={cliente.id}>{cliente.nombre}</option>)
 
           }
         </select>   
-       <br>
+ 
+       <p> categoria </p>
         <select className="dropdown" onChange={this.getCategoria}>
           {
             this.state.categorias.map((categoria,index) => <option key={index} value={categoria.id}>{categoria.nombre}</option>)
 
           }
         </select>
-        <br>
+        
+        <p> producto </p>
         <select className="dropdown" onChange={this.getProducto}>
           {
-            this.state.producto.map((producto,index) => <option key={index} value={producto.id}>{producto.nombre}</option>)
+            this.state.productos.map((producto,index) => <option key={index} value={producto.id}>{producto.nombre}</option>)
 
           }
         </select>
-        <br>
+        
         <input placeholder="Cantidad " onChange={this.getCantidad} value={this.state.cantidadInput} />
-    
+       <br/>
            <button onClick={this.saveClienteProducto}>Guardar Compra</button>
         {this.state.error ? error : ''}
         {this.state.errorUpdate ? errorUpdate : ''}
@@ -124,5 +126,5 @@ class Purchase extends Component {
     );
   }
 }
-
+  
 export default Purchase;
