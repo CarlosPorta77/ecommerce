@@ -16,11 +16,11 @@
 /* Estilos Globales Formulario */
   .Form {
     height: 30vh;
-    width: 100vw;
-    margin: 8vh 0 0;
+    width: 75vw;
+    margin: 0 0 0;
     display: flex;
     flex-direction: column;
-    align-items:center;
+    align-items:flex-end;
     justify-content: space-evenly;
   }
   .Form input {

@@ -69,7 +69,7 @@ class ProductCreate extends Component {
         </select>
 
 
-           <button onClick={this.saveClient}>Almacenar Producto</button>
+           <button onClick={this.saveClient}>Guardar</button>
         {this.state.error ? error : ''}
         {this.state.errorUpdate ? errorUpdate : ''}
       </div>
