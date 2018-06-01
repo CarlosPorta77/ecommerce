@@ -68,9 +68,9 @@ class ProductCreate extends Component {
       <h2>Agregar Un Producto Nuevo</h2>
         <br/>
         <input placeholder="Nombre " onChange={this.getNombre} value={this.state.nombreInput} />
-
+        <br/>
         <input placeholder="Stock" onChange={this.getStock} value={this.state.stockInput} />
-
+        <br/>
         <select className="dropdown" onChange={this.getCategoriaId}>
           {
             this.state.categorias.map((categoria,index) => <option key={index} value={categoria.id}>{categoria.nombre}</option>)

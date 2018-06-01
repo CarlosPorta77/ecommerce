@@ -53,6 +53,7 @@
   .Form .dropdown {
     height: 4vh;
     width: 37vw;
+    border-radius: 25px;
 }
 
 .Form .dropdown:focus {
