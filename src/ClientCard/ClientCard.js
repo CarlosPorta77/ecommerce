@@ -1,15 +1,17 @@
 import React from 'react';
 
-//import './ProductCard.css';
+import './ClientCard.css';
 
-const Card = (props) => {
+const ClientCard = (props) => {
     return (
         <div className="Card">
             <div className="name">
-                <span>{props.name}</span>
+                <span>{props.nombre}</span>
             </div>
             <div className="container">
-                {props.category}
+                {//props.productos.map( producto => producto.nombre )
+                        <p>aca van los productos</p>
+                    }
             </div>
             <div className="actions">
                 <button className="danger" onClick={props.handleDeleteClick}>DELETE</button>
@@ -19,4 +21,4 @@ const Card = (props) => {
     );
 };
 
-export default Card;
+export default ClientCard;
