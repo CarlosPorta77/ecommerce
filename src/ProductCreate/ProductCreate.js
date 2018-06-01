@@ -11,6 +11,7 @@ class ProductCreate extends Component {
     error: null,
     errorUpdate: null,
     nombreInput: '',
+    stockInput: '',
     categoriaInput: '',
     id: '',
     categorias: []
@@ -33,15 +34,21 @@ class ProductCreate extends Component {
     this.setState({nombreInput});
   };
 
+  getStock = (event) => {
+    const stockInput = event.target.value;
+    this.setState({stockInput});
+  };
+
   getCategoria = (event) => {
     const categoria_ID = event.target.value;
     this.setState({categoriaInput: categoria_ID});
   };
 
   saveClient = () => {
-    const {nombreInput, categoriaInput} = this.state;
+    const {nombreInput, stockInput, categoriaInput} = this.state;
     axios.post('http://10.0.1.153:4000/productos', {
       nombre: nombreInput,
+      stock: stockInput,
       categoriaID : categoriaInput
     }).then(response => {
       this.props.history.push("/");
@@ -61,7 +68,9 @@ class ProductCreate extends Component {
       <h2>Agregar Un Producto Nuevo</h2>
         <br/>
         <input placeholder="Nombre " onChange={this.getNombre} value={this.state.nombreInput} />
-        <br/>
+
+        <input placeholder="Stock" onChange={this.getStock} value={this.state.stockInput} />
+
         <select className="dropdown" onChange={this.getCategoriaId}>
           {
             this.state.categorias.map((categoria,index) => <option key={index} value={categoria.id}>{categoria.nombre}</option>)
