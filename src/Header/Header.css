@@ -1,29 +1,29 @@
 .header {
-    height: 100vh;
-    width: 200px;
+    height: 10vh;
+    width: 100vw;
     top:0;
     background-color:#2ecc71;
     position: fixed;
     display: flex;
-    text-align:left;
-    align-items: flex-start;
-    justify-content: flex-start;
+    flex-direction: row;
+    align-items: center;
+
 }
 
 .contenedor-rutas {
+    width: 100vw;
     display: flex;
-    flex-direction: column;
-    padding-left: 25px;
-    padding-top: 30px;
-
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0px 25px;
 }
 
 a {
     color: #2c3e50;
     text-decoration: none;
     font-family: 'Nunito', sans-serif;
-    font-size: 1em;
-    font-weight: 600;
+    font-size: 0.85em;
+    font-weight: 400;
 }
 
 a:hover, a:active {
@@ -31,8 +31,22 @@ a:hover, a:active {
     transition: all 0.25s ease-in-out;
 }
 
-@media only screen and (max-width: 620px) {
+@media only screen and (max-width: 420px) {
     .header {
-        width: 175px;
+        top:0;
+        width: 100vw;
+        height: 14vh;
+        text-align: left;
+    }
+    .contenedor-rutas {
+        display: grid;
+        grid-template-columns: 50% 50%;
+        grid-template-rows: auto auto auto auto;
+    }
+    .ruta {
+        height: 20px;
+    }
+    a {
+        font-weight: 400;
     }
 }

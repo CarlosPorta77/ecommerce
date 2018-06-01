@@ -3,7 +3,7 @@ import React, {Component} from 'react';
 import axios from 'axios';
 
 // Assets
-import './ClientCreate.css';
+import '../Form.css';
 
 class ClientCreate extends Component {
 
@@ -52,14 +52,17 @@ class ClientCreate extends Component {
     const error = (<label>{this.state.error}</label>);
     const errorUpdate = (<label>{this.state.errorUpdate}</label>);
     return (
-      <div className="Form">
-        <h2>Crear Un Cliente Nuevo</h2>
-        <br/>
-        <input placeholder="Nombre " onChange={this.getNombre} value={this.state.nombreInput} />
-        <br/>
-        <button onClick={this.saveClient}>Guardar</button>
-        {this.state.error ? error : ''}
-        {this.state.errorUpdate ? errorUpdate : ''}
+      <div className="form">
+        <h2>Crear Cliente</h2>
+        <div className="input-wrapper">
+          <label>Nombre y Apellido:</label>
+          <input onChange={this.getNombre} value={this.state.nombreInput} />
+        </div>
+        <div className="btn-wrapper">
+          <button onClick={this.saveClient}>Crear</button>
+          {this.state.error ? error : ''}
+          {this.state.errorUpdate ? errorUpdate : ''}
+        </div>
       </div>
     );
   }

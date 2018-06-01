@@ -2,7 +2,8 @@
 import React, {Component} from 'react';
 import axios from 'axios';
 
-import './ProductCreate.css';
+// Assets
+import '../Form.css';
 
 
 class ProductCreate extends Component {
@@ -64,23 +65,29 @@ class ProductCreate extends Component {
     const error = (<label>{this.state.error}</label>);
     const errorUpdate = (<label>{this.state.errorUpdate}</label>);
     return (
-      <div className="Form">
-      <h2>Agregar Un Producto Nuevo</h2>
-        <br/>
-        <input placeholder="Nombre " onChange={this.getNombre} value={this.state.nombreInput} />
-        <br/>
-        <input placeholder="Stock" onChange={this.getStock} value={this.state.stockInput} />
-        <br/>
-        <select className="dropdown" onChange={this.getCategoriaId}>
-          {
-            this.state.categorias.map((categoria,index) => <option key={index} value={categoria.id}>{categoria.nombre}</option>)
+      <div className="form">
+        <h2>Agregar Un Producto Nuevo</h2>
+        <div className="input-wrapper">
+          <label>Nombre Producto</label>
+          <input onChange={this.getNombre} value={this.state.nombreInput} />
+        </div>
+        <div className="input-wrapper">
+          <label>Stock</label>
+          <input type="number" onChange={this.getStock} value={this.state.stockInput} />
+        </div>
+        <div className="dropdown-wrapper">
+          <select className="dropdown" onChange={this.getCategoriaId}>
+            {
+              this.state.categorias.map((categoria,index) => <option key={index} value={categoria.id}>{categoria.nombre}</option>)
 
-          }
-        </select>
-        <br/>
-        <button onClick={this.saveClient}>Guardar</button>
-        {this.state.error ? error : ''}
-        {this.state.errorUpdate ? errorUpdate : ''}
+            }
+          </select>
+        </div>
+        <div className="btn-wrapper">
+          <button onClick={this.saveClient}>Guardar</button>
+          {this.state.error ? error : ''}
+          {this.state.errorUpdate ? errorUpdate : ''}
+        </div>
       </div>
     );
   }
