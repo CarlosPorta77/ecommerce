@@ -52,9 +52,11 @@ class CategoryCreate extends Component {
     const errorUpdate = (<label>{this.state.errorUpdate}</label>);
     return (
       <div className="Form">
-      <h2>Crear Una Categoría Nueva</h2>
+        <h2>Crear Una Categoría Nueva</h2>
+        <br/>
         <input placeholder="Categoría " onChange={this.getNombreCategoria} value={this.state.nombreCategoria} />
-           <button onClick={this.saveCategoria}>Guardar</button>
+        <br/>
+        <button onClick={this.saveCategoria}>Guardar</button>
         {this.state.error ? error : ''}
         {this.state.errorUpdate ? errorUpdate : ''}
       </div>

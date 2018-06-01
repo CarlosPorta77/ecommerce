@@ -14,15 +14,21 @@ import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
 const header = (props) => {
     return (
         <Router>
-            <div>
+            <div className="App">
                 <div className="header">
                     <div className="contenedor-rutas">
                         <div className="ruta"><Link to={'/categoryCreate'}>Crear Categoria</Link></div> 
+                        <br/>
                         <div className="ruta"><Link to={'/clientCreate'}>Crear Cliente</Link></div>
+                        <br/>
                         <div className="ruta"><Link to={'/productCreate'}>Crear Productos</Link></div>    
+                        <br/>
                         <div className="ruta"><Link to={'/clientList'}>Lista Clientes</Link></div>
+                        <br/>
                         <div className="ruta"><Link to={'/productList'}>Lista Productos</Link></div>
+                        <br/>
                         <div className="ruta"><Link to={'/productsDeleteAll'}>Borrar Productos</Link></div>
+                        <br/>
                         <div className="ruta"><Link to={'/purchase'}>Purchase</Link></div>
                     </div>
                 </div>
