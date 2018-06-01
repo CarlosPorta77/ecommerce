@@ -55,12 +55,12 @@ searchProducto = (parametro) => {
       <div> 
       <h2> Resultado de la busqueda </h2>
         <ul>
-        {
+        
            <li>
-                this.state.productos.map((producto,index) => {producto.nombre} )
+                {this.state.productos.map((producto,index) => producto.nombre)}
            </li> 
 
-          }
+          
         </ul>
            
       </div>
