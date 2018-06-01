@@ -59,17 +59,17 @@ class ProductCreate extends Component {
     return (
       <div className="Form">
       <h2>Agregar Un Producto Nuevo</h2>
+        <br/>
         <input placeholder="Nombre " onChange={this.getNombre} value={this.state.nombreInput} />
-
+        <br/>
         <select className="dropdown" onChange={this.getCategoriaId}>
           {
             this.state.categorias.map((categoria,index) => <option key={index} value={categoria.id}>{categoria.nombre}</option>)
 
           }
         </select>
-
-
-           <button onClick={this.saveClient}>Guardar</button>
+        <br/>
+        <button onClick={this.saveClient}>Guardar</button>
         {this.state.error ? error : ''}
         {this.state.errorUpdate ? errorUpdate : ''}
       </div>

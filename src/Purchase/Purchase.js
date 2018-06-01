@@ -92,34 +92,38 @@ class Purchase extends Component {
     return (
       <div className="Form">
       <h2> Nueva Compra</h2>
-        <br/> 
-         <p> cliente </p>
+      <div>
+         <p>Cliente: </p>
        <select className="dropdown"  onChange={this.getCliente}>
           {
             this.state.clientes.map((cliente,index) => <option key={index} value={cliente.id}>{cliente.nombre}</option>)
 
           }
         </select>   
- 
-       <p> categoria </p>
+      </div>
+      <div>
+        <p>Categoría: </p>
         <select className="dropdown" onChange={this.getCategoria}>
           {
             this.state.categorias.map((categoria,index) => <option key={index} value={categoria.id}>{categoria.nombre}</option>)
 
           }
         </select>
-        
-        <p> producto </p>
+      </div>
+      <div>
+        <p>Producto: </p>
         <select className="dropdown" onChange={this.getProducto}>
           {
             this.state.productos.map((producto,index) => <option key={index} value={producto.id}>{producto.nombre}</option>)
 
           }
         </select>
-        
+      </div>
+        <br/>
+        <br/>
         <input placeholder="Cantidad " onChange={this.getCantidad} value={this.state.cantidadInput} />
-       <br/>
-           <button onClick={this.saveClienteProducto}>Guardar Compra</button>
+        <br/>
+        <button onClick={this.saveClienteProducto}>Guardar Compra</button>
         {this.state.error ? error : ''}
         {this.state.errorUpdate ? errorUpdate : ''}
       </div>
