@@ -2,6 +2,8 @@ import React from 'react';
 
 import './Header.css';
 
+import Search from '../Search/Search';
+
 import ClientCreate from '../ClientCreate/ClientCreate';
 import ClientList from '../ClientList/ClientList';
 import ProductCreate from '../ProductCreate/ProductCreate';
@@ -9,14 +11,19 @@ import ProductCreate from '../ProductCreate/ProductCreate';
 import ProductList from '../ProductList/ProductList'
 import CategoryCreate from '../CategoryCreate/CategoryCreate';
 import Purchase from '../Purchase/Purchase';
+
 import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
 
+
 const header = (props) => {
+
     return (
         <Router>
             <div className="App">
                 <div className="header">
                     <div className="contenedor-rutas">
+                        <div className="ruta"><Link to={'/search'}>Buscar</Link></div> 
+                        <br/>
                         <div className="ruta"><Link to={'/categoryCreate'}>Crear Categoria</Link></div> 
                         <br/>
                         <div className="ruta"><Link to={'/clientCreate'}>Crear Cliente</Link></div>
@@ -33,6 +40,7 @@ const header = (props) => {
                     </div>
                 </div>
                 <Switch>
+                    <Route path="/search" component={Search}/>
                     <Route path="/categoryCreate" component={CategoryCreate}/>
                     <Route path="/clientCreate/:clientId?" component={ClientCreate}/>
                     <Route path="/productCreate/:productId?" component={ProductCreate}/>
