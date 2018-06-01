@@ -1,0 +1,11 @@
+.Wrap {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 10px;
+  }
+  
+  .Wrap .error {
+    font-size: 26px;
+  }
+  

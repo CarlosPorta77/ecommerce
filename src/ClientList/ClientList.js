@@ -7,47 +7,51 @@ class ClientList extends Component {
 
   state = {
     error: null,
-    client: [],
+    clientes: [],
     productos:[],
-    cliente_productos:[],
+    cliente_producto:[],
     productosAMostrar: [],
   };
 
-  constructor(props, context){
+  constructor(props){
     
-    super(props, context);
+    super(props);
+
     axios.get('http://10.0.1.153:4000/clientes')
-      .then(response => {
-        const {data} = response;
-        this.setState({
-          client: data})
-        })
-     axios.get('http://10.0.1.153:4000/productos')
-       .then(response => {
-            const {data} = response;
-            this.setState({
-              productos: data})
-              console.log(this.mostrarProductos(1))
-            })
-              axios.get('http://10.0.1.153:4000/cliente_producto')
-              .then(response => {
-                const {data} = response;
-                this.setState({
-                  cliente_productos: data
-                 })
-                
-      })
+    .then(result => {
+      const {data} = result;
+      this.setState({
+        clientes: data
+      });
+    });
+
+    axios.get('http://10.0.1.153:4000/productos')
+    .then(result => {
+      const {data} = result;
+      this.setState({
+        productos: data
+      });
+    });
+
+    axios.get('http://10.0.1.153:4000/cliente_producto')
+    .then(result => {
+      const {data} = result;
+      this.setState({
+        cliente_producto: data
+      });
+    });
+
       
   }
 
-  deleteCard = (id) => {
+  deleteClient= (id) => {
     axios.delete(`http://10.0.1.153:4000/clientes/${id}`)
       .then(() => {
-        const newClient = this.state.client.filter(client => {
+        const newClient = this.state.clientes.filter(client => {
           return client.id !== id;
         });
         this.setState({
-          client: newClient
+          clientes: newClient
         });
       })
       .catch(error => {
@@ -55,14 +59,13 @@ class ClientList extends Component {
           error: error.message
         });
       });
-  };
+  }
 
   updateElement = (clientId) => {
     this.props.history.push(`/clientCreate/${clientId}`)
   };
 
   mostrarProductos = (clienteId) =>{
-    console.log(clienteId)
     return axios.get(`http://10.0.1.153:4000/cliente_producto/?clienteId=${clienteId}`)
     
     .then(response => {
@@ -74,7 +77,6 @@ class ClientList extends Component {
           producto.id === cliente_producto.productoId
           
         })
-        console.log(productoAMostrar)  
       })
          
 
@@ -82,16 +84,17 @@ class ClientList extends Component {
   }
 
   getClients = () => {
-    return this.state.clients
+    return this.state.clientes
       .map(client => {
         return (
           <Card key={client.id}
             id={client.id}
             nombre={client.nombre}
+            productos= {this.mostrarProductos(client.id)}
             handleDeleteClick={() => this.deleteClient(client.id)}
             handleUpdateClick={() => this.updateElement(client.id)}
           >
-            {/* {this.state.producto.nombre} */}
+            
           </Card>
         );
       });
@@ -99,9 +102,8 @@ class ClientList extends Component {
  
 
   render() {
-    const client = this.getClients();
+    const client = this.getClients()
     const error = (<div className="error">{this.state.error}</div>);
- //  const nombreDeProductos = this.productoAMostrar();
 
     return (
       <div className="Wrap">
