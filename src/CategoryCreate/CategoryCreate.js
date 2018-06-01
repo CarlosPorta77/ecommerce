@@ -3,7 +3,7 @@ import React, {Component} from 'react';
 import axios from 'axios';
 
 // Assets
-import './CategoryCreate.css';
+import '../Form.css';
 
 class CategoryCreate extends Component {
 
@@ -51,14 +51,17 @@ class CategoryCreate extends Component {
     const error = (<label>{this.state.error}</label>);
     const errorUpdate = (<label>{this.state.errorUpdate}</label>);
     return (
-      <div className="Form">
-        <h2>Crear Una Categoría Nueva</h2>
-        <br/>
-        <input placeholder="Categoría " onChange={this.getNombreCategoria} value={this.state.nombreCategoria} />
-        <br/>
-        <button onClick={this.saveCategoria}>Guardar</button>
-        {this.state.error ? error : ''}
-        {this.state.errorUpdate ? errorUpdate : ''}
+      <div className="form">
+        <h2>Crear Categoría</h2>
+        <div class="input-wrapper">
+          <label>Categoría</label>
+          <input onChange={this.getNombreCategoria} value={this.state.nombreCategoria} />
+        </div>
+        <div className="btn-wrapper">
+          <button onClick={this.saveCategoria}>Crear</button>
+          {this.state.error ? error : ''}
+          {this.state.errorUpdate ? errorUpdate : ''}
+        </div>
       </div>
     );
   }
