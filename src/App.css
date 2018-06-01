@@ -8,6 +8,7 @@
     font-family: 'Nunito', sans-serif;
     color: #2c3e50;
   }
+
 /* Estilos Globales Formulario */
   .Form {
     margin-left:25vw;
@@ -19,6 +20,7 @@
     justify-content: flex-start;
     background-color: white;
   }
+
   .Form input {
     height: 3vh;
     width: 35vw;
@@ -26,13 +28,13 @@
     border-radius: 2vh;
     border: 1px solid rgb(145, 138, 139);
     font-size: 1em;
-    
   }
+  
   .Form input:focus {
     outline:0;
     background-color: lightgray;
-    border-radius: 2vh;
   }
+
   .Form button {
     height: 5vh;
     width: 37vw;
@@ -74,6 +76,9 @@
       height: 35px;
       width: 210px;
     }
+    h2 {
+      font-size: 1.25em;
+    }
   }
 
 @media only screen and (min-width: 1080px)  {
@@ -83,14 +88,17 @@
       padding: 5px;
       border-radius: 15px;      
     }
-    .Form button {
+  .Form button {
       height: 35px;
       width: 360px;
       border-radius: 15px;      
     }
-    .Form .dropdown {
+  .Form .dropdown {
       height: 35px;
       width: 360px;
+    }
+    h2 {
+      font-size: 2em;
     }
   }
 
