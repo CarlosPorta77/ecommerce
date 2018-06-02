@@ -66,7 +66,7 @@ class ProductCreate extends Component {
     const errorUpdate = (<label>{this.state.errorUpdate}</label>);
     return (
       <div className="form">
-        <h2>Agregar Un Producto Nuevo</h2>
+        <h2>Crear Productos</h2>
         <div className="input-wrapper">
           <label>Nombre Producto</label>
           <input onChange={this.getNombre} value={this.state.nombreInput} />

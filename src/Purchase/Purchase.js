@@ -91,28 +91,28 @@ class Purchase extends Component {
     const errorUpdate = (<label>{this.state.errorUpdate}</label>);
     return (
       <div className="form">
-      <h2> Nueva Compra</h2>
-      <div className="input-wrapper">
+      <h2> Asignar Productos</h2>
+      <div className="dropdown-wrapper">
          <label>Cliente </label>
-       <select   onChange={this.getCliente}>
+       <select className="dropdown" onChange={this.getCliente}>
           {
             this.state.clientes.map((cliente,index) => <option key={index} value={cliente.id}>{cliente.nombre}</option>)
 
           }
         </select>   
       </div>
-      <div className="input-wrapper">
+      <div className="dropdown-wrapper">
         <label>Categoría </label>
-        <select onChange={this.getCategoria}>
+        <select className="dropdown" onChange={this.getCategoria}>
           {
             this.state.categorias.map((categoria,index) => <option key={index} value={categoria.id}>{categoria.nombre}</option>)
 
           }
         </select>
       </div >
-      <div className="input-wrapper">
+      <div className="dropdown-wrapper">
         <label>Producto: </label>
-        <select onChange={this.getProducto}>
+        <select className="dropdown" onChange={this.getProducto}>
           {
             this.state.productos.map((producto,index) => <option key={index} value={producto.id}>{producto.nombre}</option>)
 
