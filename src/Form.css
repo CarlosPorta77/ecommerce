@@ -21,7 +21,6 @@
     width: 400px;
     display: flex;
     flex-direction: column;
-    margin-bottom: 15px;
   }
 
   .input-wrapper input {
@@ -43,11 +42,10 @@
     width: 400px;
     display: flex;
     flex-direction: column;
-    margin-bottom: 15px;
   }
 
   .btn-wrapper button {
-    height: 40px;
+    height: 38px;
     font-size: 1em;
     border: 1px solid #2980b9;
     background-color:#2980b9;
@@ -64,7 +62,6 @@
     width: 400px;
     display: flex;
     flex-direction: column;
-    margin-bottom: 15px;
   }
 
   .dropdown-wrapper select {
@@ -97,8 +94,8 @@
         height: 86vh;
         width: 100vw;
         margin:14vh 0px 0px;
-
     }
+    
     .input-wrapper, .btn-wrapper, .dropdown-wrapper {
       width: 85vw;
     }
@@ -109,9 +106,8 @@
         height: 86vh;
         width: 50vw;
         margin:10vh auto 0px;
-
-
     }
+
     .input-wrapper, .btn-wrapper, .dropdown-wrapper {
       width: 400px;
     }

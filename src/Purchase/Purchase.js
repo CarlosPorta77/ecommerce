@@ -124,7 +124,7 @@ class Purchase extends Component {
         <input type="number" onChange={this.getCantidad} value={this.state.cantidadInput} />
       </div>
       <div className="btn-wrapper">
-        <button onClick={this.saveClienteProducto}>Guardar Compra</button>
+        <button onClick={this.saveClienteProducto}>Guardar</button>
         {this.state.error ? error : ''}
         {this.state.errorUpdate ? errorUpdate : ''}
       </div>
