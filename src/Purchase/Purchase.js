@@ -111,7 +111,7 @@ class Purchase extends Component {
         </select>
       </div >
       <div className="dropdown-wrapper">
-        <label>Producto: </label>
+        <label>Producto </label>
         <select className="dropdown" onChange={this.getProducto}>
           {
             this.state.productos.map((producto,index) => <option key={index} value={producto.id}>{producto.nombre}</option>)

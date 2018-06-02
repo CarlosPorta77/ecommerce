@@ -55,7 +55,7 @@ class ClientCreate extends Component {
       <div className="form">
         <h2>Crear Cliente</h2>
         <div className="input-wrapper">
-          <label>Nombre y Apellido:</label>
+          <label>Nombre y Apellido</label>
           <input onChange={this.getNombre} value={this.state.nombreInput} />
         </div>
         <div className="btn-wrapper">
