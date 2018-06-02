@@ -23,7 +23,7 @@ class Search extends Component {
   getNombre = (event) => {
     const nombreInput = event.target.value;
     this.setState({nombreInput});
-    if (nombreInput.lenght() > 3) this.searchProducto(nombreInput.toLowerCase())
+    if (nombreInput.length() > 3) this.searchProducto(nombreInput.toLowerCase())
   };
 
 searchProducto = (parametro) => {
@@ -45,14 +45,14 @@ searchProducto = (parametro) => {
     const error = (<label>{this.state.error}</label>);
     const errorUpdate = (<label>{this.state.errorUpdate}</label>);
     return (
-      <div className="Form">
-      <h2>Buscar producto por nombre </h2>
-        <input placeholder="Nombre " onChange={this.getNombre} value={this.state.nombreInput} />
-
+      <div className="form">
+      <h2>Búsqueda</h2>
+      <div className="input-wrapper">
+        <input  onChange={this.getNombre} value={this.state.nombreInput} />
         {this.state.error ? error : ''}
         {this.state.errorUpdate ? errorUpdate : ''}
-
-      <h2> Resultado de la busqueda </h2>
+      </div>
+      <h2> Resultados</h2>
         <ul>
         {
            <li>
